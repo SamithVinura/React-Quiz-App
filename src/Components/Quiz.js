@@ -26,13 +26,32 @@ function Quiz() {
     <div className="Quiz">
         <h1>{`${crrQuestion+1}. `} {Questions[crrQuestion].prompt}</h1>
 
-        <div >
-          <button className='button1' onClick={()=>setoptionChosen("A")}>{Questions[crrQuestion].optionA}</button>
-          <button className='button1' onClick={()=>setoptionChosen("B")}>{Questions[crrQuestion].optionB}</button>
-          <button className='button1' onClick={()=>setoptionChosen("C")}>{Questions[crrQuestion].optionC}</button>
-          <button className='button1' onClick={()=>setoptionChosen("D")}>{Questions[crrQuestion].optionD}</button>
+        <div className='options'>
+          <div className='boder' tabIndex={1}>
+            <div className='answer' onClick={()=>setoptionChosen("A")}>{Questions[crrQuestion].optionA}</div>
+          </div>
+
+        <div className='boder' tabIndex={1}>
+        <div className='answer' onClick={()=>setoptionChosen("B")}>{Questions[crrQuestion].optionB}</div>
         </div>
-        <div className='ss aa'>hello</div>
+
+        <div className='boder' tabIndex={1}>
+        <div className='answer' onClick={()=>setoptionChosen("C")}>{Questions[crrQuestion].optionC}</div>
+        </div>
+
+        <div className='boder' tabIndex={1}>
+        <div className='answer' onClick={()=>setoptionChosen("D")}>{Questions[crrQuestion].optionD}</div>
+        </div>
+
+
+
+
+          
+          
+          
+         
+        </div>
+        
         {crrQuestion=== Questions.length-1 ? <button className='button2' onClick={finalQuestion}>Finish Quiz</button> : <button className='button2' onClick={nextQuestion}>Next Question</button>}
         
     </div>

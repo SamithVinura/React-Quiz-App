@@ -1,20 +1,24 @@
-import {React,useContext} from 'react'
-import { QuizContext } from '../Helpers/Context'
-import '../App.css'
+import { React, useContext } from "react";
+import { QuizContext } from "../Helpers/Context";
+import "../App.css";
+import QuizLogo from "../Assests/QuizLogo.png";
 function Menu() {
+  const { setGameState, setUserName } = useContext(QuizContext);
 
-  const {gameState,setGameState,setUserName} = useContext(QuizContext)
-
-   
   return (
     <div className="Menu">
-      <label>Enter Your Name:</label>
+      <img src={QuizLogo} alt="" />
       <input
         type="text"
-        placeholder="Ex. John Smith"
+        placeholder="Enter Your Name"
         onChange={(event) => {
           setUserName(event.target.value);
         }}
+      />
+      <input
+        type="text"
+        placeholder="Enter E-mail"
+        
       />
       <button
         onClick={() => {
@@ -24,7 +28,7 @@ function Menu() {
         Start Quiz
       </button>
     </div>
-  )
+  );
 }
 
-export default Menu
+export default Menu;
